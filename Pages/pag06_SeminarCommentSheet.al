@@ -4,6 +4,7 @@ page 50106 "CSD Seminar Comment Sheet"
     PageType = List;
     UsageCategory = Administration;
     SourceTable = "CSD Seminar Comment Line";
+    AutoSplitKey = true;
 
     layout
     {
@@ -31,22 +32,9 @@ page 50106 "CSD Seminar Comment Sheet"
         }
     }
 
-    actions
-    {
-        area(Processing)
-        {
-            action(ActionName)
-            {
-                ApplicationArea = All;
+    trigger OnNewRecord(BelowxRec: Boolean)
 
-                trigger OnAction()
-                begin
-
-                end;
-            }
-        }
-    }
-
-    var
-        myInt: Integer;
+    begin
+        SetupNewLine();
+    end;
 }
