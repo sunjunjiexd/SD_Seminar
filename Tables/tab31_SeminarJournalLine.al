@@ -24,6 +24,11 @@ table 50131 "CSD Seminar Journal Line"
         field(4; "Posting Date"; Date)
         {
             Caption = 'Posting Date';
+
+            trigger OnValidate();
+            begin
+                Validate("Document Date", "Posting Date");
+            end;
         }
         field(5; "Document Date"; Date)
         {
