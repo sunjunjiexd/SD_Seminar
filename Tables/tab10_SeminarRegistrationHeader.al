@@ -340,6 +340,12 @@ table 50110 "CSD Seminar Reg. Header"
         end;
 
         InitRecord();
+
+        // >> Lab 8-1
+        if GetFilter("Seminar No.") <> '' then
+            if GetRangeMin("Seminar No.") = GetRangeMax("Seminar No.") then
+                Validate("Seminar No.", GetRangeMin("Seminar No."));
+        // << Lab 8-1
     end;
 
     local procedure InitRecord()
